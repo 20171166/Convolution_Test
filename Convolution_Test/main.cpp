@@ -37,6 +37,7 @@ int main(int argc, const char * argv[]){
                     for(int k = 0; k < input_channel_size; k++){
                         string str;
                         getline(feaFile,str);
+                        cout << str << endl;
                         if(!str.compare("") || feaFile.eof()) cout << "Error occured" << endl;
                         kernel[l][i][j][k] = stoi(str,NULL);
                     }
@@ -59,7 +60,7 @@ int main(int argc, const char * argv[]){
     }
     
     ofstream writeDUMP;
-    writeDUMP.open("/Users/laurent01/Desktop/Buffer_Dump",ios::in|ios::app);
+    writeDUMP.open("/Users/laurent01/Desktop/Test_Dump",ios::in|ios::app);
     if(writeDUMP.is_open()){
         for(int i = 0; i < output_channel_size; i++){
             for(int j = 0; j < size_of_output; j++){
